@@ -140,6 +140,7 @@ export default defineComponent({
         prompt: {
           filled: true,
           model: nameVal,
+          maxlength: 15,
           type: "text",
           isValid: (val) =>
             /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/g.test(val),

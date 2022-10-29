@@ -81,6 +81,10 @@ module.exports = configure(function (/* ctx */) {
 			// vitePlugins: [
 			//   [ 'package-name', { ..options.. } ]
 			// ]
+			extendViteConf(viteConf, { isServer, isClient }) {
+				// do something with viteConf... change it in-place
+				viteConf.build.assetsInlineLimit = 0;
+			},
 		},
 
 		// Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer

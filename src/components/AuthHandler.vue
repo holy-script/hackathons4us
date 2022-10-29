@@ -5,7 +5,6 @@
     color="primary"
     @click="auth"
   />
-  <div>{{ user }}</div>
 </template>
 
 <script>
@@ -77,7 +76,6 @@ export default defineComponent({
     return {
       auth,
       isLoading,
-      user,
     };
   },
 });

@@ -22,6 +22,12 @@ const routes = [
 				path: "dash",
 				component: () => import("pages/DashboardPage.vue"),
 			},
+			{
+				name: "Hack",
+				beforeEnter: authGuard,
+				path: "hack/:team",
+				component: () => import("pages/HackPage.vue"),
+			},
 		],
 	},
 
