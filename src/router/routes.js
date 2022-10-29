@@ -1,3 +1,5 @@
+import { authGuard } from "@auth0/auth0-vue";
+
 const routes = [
 	{
 		path: "/",
@@ -5,11 +7,20 @@ const routes = [
 		children: [
 			{
 				name: "Home",
-				meta: {
-					requiresAuth: false,
-				},
 				path: "",
 				component: () => import("pages/IndexPage.vue"),
+			},
+			{
+				name: "Onboard",
+				beforeEnter: authGuard,
+				path: "welcome",
+				component: () => import("pages/OnboardPage.vue"),
+			},
+			{
+				name: "Dashboard",
+				beforeEnter: authGuard,
+				path: "dash",
+				component: () => import("pages/DashboardPage.vue"),
 			},
 		],
 	},
@@ -17,6 +28,7 @@ const routes = [
 	// Always leave this as last one,
 	// but you can also remove it
 	{
+		name: "Error",
 		path: "/:catchAll(.*)*",
 		component: () => import("pages/ErrorNotFound.vue"),
 	},
