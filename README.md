@@ -1,6 +1,9 @@
 # Hackathons 4 Us (hackathons4us)
 
-A retro experience about hacking together
+A retro experience about hacking together.
+
+![image](https://user-images.githubusercontent.com/84567489/198872417-52be0334-a74f-4b35-8b7a-f03569481a4e.png)
+
 
 ## Install the dependencies
 ```bash
