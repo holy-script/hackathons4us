@@ -36,8 +36,29 @@ function launch(id) {
 					collides: true,
 				});
 			map.createLayer("Carpets", tileset);
+			this.furniture = map
+				.createLayer("Furniture", tileset)
+				.setCollisionByProperty({
+					collides: true,
+				});
 
 			this.isLeader = store.email == store.teamLeader;
+			this.roomAreas = map.filterObjects(
+				"Spawns",
+				(obj) =>
+					obj.rectangle &&
+					obj.name != "Red" &&
+					obj.name != "Purple" &&
+					obj.name != "Blue"
+			);
+			for (let area of this.roomAreas) {
+				area.rect = new Phaser.Geom.Rectangle(
+					area.x,
+					area.y,
+					area.width,
+					area.height
+				);
+			}
 			if (this.isLeader) {
 				this.room = "None";
 				this.inviteAreas = map.filterObjects(
@@ -48,7 +69,6 @@ function launch(id) {
 							obj.name == "Purple" ||
 							obj.name == "Blue")
 				);
-				console.log(this.inviteAreas);
 				for (let area of this.inviteAreas) {
 					area.rect = new Phaser.Geom.Rectangle(
 						area.x,
@@ -82,8 +102,8 @@ function launch(id) {
 			this.player = this.physics.add
 				.sprite(this.spawnPoint.x, this.spawnPoint.y, "mySpritesheet")
 				.setScale(1.5);
-			this.player.body.setSize(22, 35);
-			this.player.body.setOffset(5, 12);
+			this.player.body.setSize(15, 15);
+			this.player.body.setOffset(10, 32);
 			this.player.anims.create({
 				key: "moveDown",
 				frames: this.anims.generateFrameNumbers("mySpritesheet", {
@@ -158,6 +178,7 @@ function launch(id) {
 			});
 
 			this.physics.add.collider(this.walls, this.player);
+			this.physics.add.collider(this.furniture, this.player);
 
 			const camera = this.cameras.main;
 			camera.startFollow(this.player);
@@ -179,7 +200,16 @@ function launch(id) {
 			}
 		}
 
-		showHeaders() {}
+		showHeaders() {
+			this.found = false;
+			for (let area of this.roomAreas) {
+				if (area.rect.contains(this.player.x, this.player.y)) {
+					store.heading = area.name;
+					this.found = true;
+				}
+			}
+			if (!this.found) store.heading = "";
+		}
 
 		update(time, delta) {
 			this.player.setVelocity(0);

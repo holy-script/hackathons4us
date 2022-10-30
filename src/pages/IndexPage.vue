@@ -1,10 +1,6 @@
 <template>
   <q-page class="flex flex-center column">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+    <p class="abel text-h3 text-white text-center">Welcome to the <span class="text-primary">Hackathons4Us</span>!</p>
     <br>
     <AuthHandler />
   </q-page>
@@ -26,3 +22,8 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="sass">
+.abel
+  font-family: "4Mini"
+</style>

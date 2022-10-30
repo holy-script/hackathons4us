@@ -15,6 +15,7 @@ export const useStore = defineStore("main", {
 		Red: false,
 		Blue: false,
 		Purple: false,
+		heading: "",
 	}),
 	getters: {},
 	actions: {

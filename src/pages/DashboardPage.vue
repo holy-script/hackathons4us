@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center column">
+  <q-page class="flex flex-center text-white abel column">
     <h1>Hello, {{store.name}}!</h1>
     <br>
     <q-select
@@ -11,6 +11,7 @@
       style="width: 250px"
       :disable="!hackathons.length"
       behavior="dialog"
+      class="bg-white"
     />
     <br>
     <q-btn
@@ -19,8 +20,9 @@
       @click="createTeam"
       :disable="!hackathons.length"
     />
+    <br>
     <div
-      class="q-pa-md"
+      class="q-pa-md bg-white rounded-borders"
       style="max-width: 350px"
     >
       <q-list bordered>
@@ -40,6 +42,7 @@
                 label="Delete"
                 color="red"
               />
+              &nbsp;&nbsp;
               <q-btn
                 label="Open"
                 color="orange"

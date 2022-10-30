@@ -26,6 +26,16 @@
         @click="inviteTeammate"
       />
     </q-page-sticky>
+    <q-page-sticky
+      position="top"
+      :offset="[0, 18]"
+    >
+      <h3
+        class="q-pa-md q-ma-sm"
+        id="heading"
+        v-if="store.heading"
+      >{{store.heading}}</h3>
+    </q-page-sticky>
   </q-page>
 </template>
 
@@ -127,3 +137,10 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="sass">
+#heading
+  border: 2px solid black
+  border-radius: 7px
+  background-color: aqua
+</style>
