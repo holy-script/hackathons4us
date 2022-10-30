@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="50" height="40" tilewidth="48" tileheight="48" infinite="0" nextlayerid="6" nextobjectid="9">
+<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="50" height="40" tilewidth="48" tileheight="48" infinite="0" nextlayerid="6" nextobjectid="15">
  <tileset firstgid="1" name="tileset-extruded" tilewidth="48" tileheight="48" spacing="2" margin="1" tilecount="216" columns="8">
   <image source="../tilesets/tileset-extruded.png" width="400" height="1350"/>
   <tile id="0">
@@ -1114,5 +1114,11 @@
   <object id="6" name="Red" class="Invite" x="264" y="532" width="94" height="69"/>
   <object id="7" name="Purple" class="Invite" x="218" y="1322" width="93" height="70"/>
   <object id="8" name="Blue" class="Invite" x="2186" y="530" width="94" height="72"/>
+  <object id="9" name="RedRoom" x="52" y="55" width="423" height="421"/>
+  <object id="10" name="PurpleRoom" x="46" y="1438" width="432" height="432"/>
+  <object id="11" name="BlueRoom" x="1921.77" y="48.5406" width="421.42" height="430.246"/>
+  <object id="12" name="HackyHangout" x="1875.43" y="1442.98" width="474.374" height="439.071"/>
+  <object id="13" name="ScratchPad" x="913.445" y="1292.94" width="904.62" height="573.661"/>
+  <object id="14" name="HackLounge" x="536.153" y="52.9533" width="1343.69" height="425.833"/>
  </objectgroup>
 </map>

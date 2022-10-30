@@ -155,6 +155,12 @@ export default defineComponent({
                     hackathons: selected.value,
                     name: teamVal.value,
                   });
+                  teams.value.push({
+                    leader: store.email,
+                    members: [store.email],
+                    hackathons: selected.value,
+                    name: teamVal.value,
+                  });
                   await updateDoc(doc(db, "users", store.email), {
                     teams: arrayUnion(teamVal.value),
                   });

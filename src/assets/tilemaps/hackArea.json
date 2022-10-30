@@ -129,6 +129,72 @@
                  "width":94,
                  "x":2186,
                  "y":530
+                }, 
+                {
+                 "class":"",
+                 "height":421,
+                 "id":9,
+                 "name":"RedRoom",
+                 "rotation":0,
+                 "visible":true,
+                 "width":423,
+                 "x":52,
+                 "y":55
+                }, 
+                {
+                 "class":"",
+                 "height":432,
+                 "id":10,
+                 "name":"PurpleRoom",
+                 "rotation":0,
+                 "visible":true,
+                 "width":432,
+                 "x":46,
+                 "y":1438
+                }, 
+                {
+                 "class":"",
+                 "height":430.245920478051,
+                 "id":11,
+                 "name":"BlueRoom",
+                 "rotation":0,
+                 "visible":true,
+                 "width":421.420363134911,
+                 "x":1921.76511146863,
+                 "y":48.5405653872673
+                }, 
+                {
+                 "class":"",
+                 "height":439.071477821191,
+                 "id":12,
+                 "name":"HackyHangout",
+                 "rotation":0,
+                 "visible":true,
+                 "width":474.373707193748,
+                 "x":1875.43093541715,
+                 "y":1442.97862560331
+                }, 
+                {
+                 "class":"",
+                 "height":573.661227304068,
+                 "id":13,
+                 "name":"ScratchPad",
+                 "rotation":0,
+                 "visible":true,
+                 "width":904.6196276718,
+                 "x":913.445185014939,
+                 "y":1292.94415076994
+                }, 
+                {
+                 "class":"",
+                 "height":425.833141806481,
+                 "id":14,
+                 "name":"HackLounge",
+                 "rotation":0,
+                 "visible":true,
+                 "width":1343.69110549299,
+                 "x":536.152608595725,
+                 "y":52.953344058837
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -137,7 +203,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":9,
+ "nextobjectid":15,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.1",

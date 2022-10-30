@@ -55,6 +55,8 @@ export default defineComponent({
                 level: 0,
                 age: 0,
                 onboarded: false,
+                charId: 0,
+                teams: [],
               };
               await setDoc(doc(db, "users", user.value.email), data);
               store.setUser(data);

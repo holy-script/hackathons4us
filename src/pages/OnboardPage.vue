@@ -61,6 +61,28 @@
         >
           <img :src="svg">
         </q-avatar>
+        <div class="q-pa-md q-gutter-sm full-width">
+          <div class="flex column flex-center">
+            <div class="container">
+              <img
+                alt="Character Sprites"
+                :src="`/sprites/char${charIndex}.png`"
+                id="charSprite"
+              />
+            </div>
+            <q-slider
+              class="q-mt-xl"
+              v-model="charIndex"
+              color="deep-orange"
+              label-always
+              markers
+              :min="1"
+              :max="100"
+              :step="1"
+            >
+            </q-slider>
+          </div>
+        </div>
       </q-carousel-slide>
       <q-carousel-slide
         name="outro"
@@ -87,7 +109,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "stores/app";
 import { useQuasar } from "quasar";
@@ -124,6 +146,7 @@ export default defineComponent({
         dataUri: true,
       })
     );
+    const charIndex = ref(1);
 
     const profileName = () => {
       let aboutName = $q.notify({
@@ -188,11 +211,14 @@ export default defineComponent({
     const finisher = async () => {
       if (nameVal.value && ageVal.value) {
         try {
-          await updateDoc(doc(db, "users", store.email), {
+          const data = {
             name: nameVal.value,
             age: parseInt(ageVal.value, 10),
             onboarded: true,
-          });
+            charId: charIndex.value,
+          };
+          await updateDoc(doc(db, "users", store.email), data);
+          store.updateUser(data);
           router.push({
             name: "Dashboard",
           });
@@ -209,12 +235,17 @@ export default defineComponent({
       }
     };
 
+    const chooseChar = () => {
+      dialog.value = true;
+    };
+
     return {
       slide,
       svg,
       profileName,
       nameVal,
       finisher,
+      charIndex,
     };
   },
 });
@@ -223,4 +254,15 @@ export default defineComponent({
 <style lang="sass">
 .center
   text-align: center
+
+.container
+  width: 32px
+  height: 48px
+  transform: scale(2)
+  overflow: hidden
+  image-rendering: pixelated
+  position: relative
+
+#charSprite
+  position: absolute
 </style>
